@@ -19,13 +19,11 @@ public class AnchorObjectSpawner : MonoBehaviour
     {
         var position = UnityARMatrixOps.GetPosition(userAnchor.transform);
         var rotation = UnityARMatrixOps.GetRotation(userAnchor.transform);
-        // GameObject sofa = GameObject.FindGameObjectWithTag("sofa");
-        // Debug.Log("判定: "+sofa);
 
         if(placedObj){
             placedObj.transform.position = position;
             Debug.Log("オブジェクト移動");
-            
+
         }else{
             Debug.Log("初回配置");
             placedObj = Instantiate(prefab, position, rotation);
